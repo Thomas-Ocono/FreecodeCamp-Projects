@@ -1,0 +1,75 @@
+body {
+  background-color: bisque;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+p {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+form {
+  background-color: beige;
+  width: 65%;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 0.2em 0.2em black;
+  padding-top: 2rem;
+}
+label {
+  font-size: 2rem;
+  margin-left: 5%;
+  margin-bottom: 0.5rem;
+}
+input {
+  font-size: 2rem;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: left;
+  margin-bottom: 1.3rem;
+  margin-top: 1rem;
+}
+select {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+#radio-label {
+  font-size: 1.8rem;
+  display: inline-block;
+}
+.btn {
+  width: 2rem;
+  font-size: 1.5rem;
+}
+.btn-label {
+  font-size: 1.5rem;
+  margin-left: 0.2rem;
+}
+#text-area {
+  font-size: 1.2rem;
+  width: 80%;
+  height: 6rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+#submit {
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#submit:hover {
+  color: white;
+  background-color: blue;
+}

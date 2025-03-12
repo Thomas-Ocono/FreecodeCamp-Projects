@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Survey</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="title">Customer Survey</h1>
+    <p id="description">Thank you for giving us valuable feedback</p>
+    <form id="survey-form">
+      <label id="name-label">Name: </label> <br />
+      <input required id="name" type="text" placeholder="Your Name" />
+      <br />
+      <label id="email-label">Email: </label> <br />
+      <input required id="email" type="email" placeholder="Your E-mail" />
+      <br />
+      <label id="number-label">Age (optional)</label> <br />
+      <input
+        id="number"
+        type="number"
+        min="1"
+        max="100"
+        placeholder="Your Age"
+      />
+      <br />
+      <label id="select-label"
+        >How would you rate your experience with us?</label
+      >
+      <select id="dropdown">
+        <option>Fantastic!</option>
+        <option>Pretty good</option>
+        <option>Rather Standard</option>
+        <option>Not the worst</option>
+        <option>Horrible</option>
+      </select>
+      <br />
+      <label id="radio-label">Would you reccommend us to others? </label>
+      <br />
+      <input
+        type="radio"
+        name="radio-btn"
+        value="yes"
+        id="yes"
+        class="btn"
+      /><label for="yes" class="btn-label">Yes!</label>
+      <br />
+      <input type="radio" name="radio-btn" value="no" class="btn" /><label
+        for="no"
+        class="btn-label"
+        >No</label
+      >
+      <br />
+      <input type="radio" name="radio-btn" value="maybe" class="btn" /><label
+        for="maybe"
+        class="btn-label"
+        >Maybe...</label
+      >
+      <br />
+
+      <label id="checkbox-label"
+        >What do you think we did great at? (Check all that apply)</label
+      ><br />
+      <input type="checkbox" name="check" value="speed" class="btn" /><label
+        for="speed"
+        class="btn-label"
+        >Speed</label
+      >
+      <br />
+      <input type="checkbox" name="check" value="taste" class="btn" /><label
+        for="taste"
+        class="btn-label"
+        >Taste</label
+      >
+      <br />
+      <input
+        type="checkbox"
+        name="check"
+        value="cleanliness"
+        class="btn"
+      /><label for="cleanliness" class="btn-label">Cleanliness</label>
+      <br />
+      <input
+        type="checkbox"
+        name="check"
+        value="hospitality"
+        class="btn"
+      /><label for="hospitality" class="btn-label">Hospitality</label>
+      <br />
+      <input
+        type="checkbox"
+        name="check"
+        value="atmosphere"
+        class="btn"
+      /><label for="atmosphere" class="btn-label">Atmosphere</label> <br />
+
+      <label id="text-label"
+        >Any suggestions on how to become even better?</label
+      ><br />
+      <textarea id="text-area" placeholder="Enter comments here..."></textarea>
+
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
