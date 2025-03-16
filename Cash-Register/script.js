@@ -1,25 +1,25 @@
-let price = 1.87;
+let price = 1;
 let cid = [
-  ["PENNY", 0.33],
-  ["NICKEL", 0],
+  ["PENNY", 0.02],
+  ["NICKEL", 0.05],
   ["DIME", 0],
-  ["QUARTER", 0.5],
+  ["QUARTER", 0],
   ["ONE", 0],
   ["FIVE", 0],
   ["TEN", 0],
   ["TWENTY", 0],
   ["ONE HUNDRED", 0],
 ];
-// code from freeCodeCamp, no touching
+//Code from freecodecamp, no touching
 
+//display price on page
 const showPrice = document.getElementById("price");
-showPrice.innerHTML = "<h2>Price: " + price + "</h2>";
+showPrice.innerText = "Price: $" + price.toFixed(2);
 
-const drawer = document.getElementById("drawer");
 const purchase = document.getElementById("purchase-btn");
-const output = document.getElementById("output");
 const inputCash = document.getElementById("cash");
-const changeDue = document.getElementById("change-due");
+let changeDue = document.getElementById("change-due");
+const drawer = document.getElementById("drawer");
 
 function updateDrawer() {
   drawer.innerHTML = "";
@@ -34,10 +34,10 @@ function updateDrawer() {
     "Twenties",
     "Hundreds",
   ];
-  for (let i = 0; i < cid.length; i++) {
-    let newEle = document.createElement("p");
-    newEle.innerText = moneyTypes[i] + ": $" + cid[i][1];
-    drawer.appendChild(newEle);
+  for (let i = 0; i < moneyTypes.length; i++) {
+    let drawerEle = document.createElement("p");
+    drawerEle.innerText = moneyTypes[i] + ": $" + Number(cid[i][1]).toFixed(2);
+    drawer.appendChild(drawerEle);
   }
 }
 updateDrawer();
@@ -47,37 +47,31 @@ function getTotal() {
   for (let i = 0; i < cid.length; i++) {
     total += cid[i][1];
   }
-  return total.toFixed(2);
+  return parseFloat(total).toFixed(2);
 }
 
 function getChange(change) {
-  const denom = [
-    "Hundreds",
-    "Twenties",
-    "Tens",
-    "Fives",
-    "Ones",
-    "Quarters",
-    "Dimes",
-    "Nickels",
-    "Pennies",
-  ];
-  const denomAmount = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
-  let amount = change;
+  let total = change;
   let count = 0;
   let cidCopy = [...cid];
-  cidCopy.reverse();
+  cidCopy = cidCopy.reverse();
+  const denomAmount = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
+  let changeText = "<p id='showStatus'>Status: OPEN</p>";
 
-  for (let i = 0; i < denom.length; i++) {
+  for (let i = 0; i < denomAmount.length; i++) {
     count = 0;
-    while (amount >= denomAmount[i] && cidCopy[i][1] > 0) {
-      amount = (amount - denomAmount[i]).toFixed(2);
+    while (Number(total).toFixed(2) >= denomAmount[i] && cidCopy[i][1] > 0) {
+      total = (total - denomAmount[i]).toFixed(2);
       cidCopy[i][1] = (cidCopy[i][1] - denomAmount[i]).toFixed(2);
       count += 1;
     }
-    console.log(denom[i] + " : " + count);
+    if (count > 0) {
+      changeText +=
+        "<p>" + cidCopy[i][0] + ": $" + denomAmount[i] * count + "</p>";
+    }
+    changeDue.innerHTML = changeText;
   }
-  if (amount > 0) {
+  if (total > 0) {
     changeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>";
   } else {
     cidCopy = cidCopy.reverse();
@@ -87,20 +81,20 @@ function getChange(change) {
 }
 
 purchase.addEventListener("click", () => {
-  if (inputCash.value < price) {
+  let cash = inputCash.value;
+  if (cash < price) {
     alert("Customer does not have enough money to purchase the item");
-    inputCash.value = "";
     return;
   }
-  if (inputCash.value == price) {
-    changeDue.innerHTML =
-      "<p>No change due - customer paid with exact cash</p>";
-    inputCash.value = "";
+  if (cash == price) {
+    changeDue.innerText = "No change due - customer paid with exact cash";
     return;
   }
-  if (inputCash.value == "") {
-    return;
+  getChange(cash - price);
+
+  let cidTotal = getTotal();
+  console.log(cidTotal);
+  if (cidTotal == 0) {
+    document.getElementById("showStatus").innerText = "Status: CLOSED";
   }
-  getChange(inputCash.value - price);
-  inputCash.value = "";
 });

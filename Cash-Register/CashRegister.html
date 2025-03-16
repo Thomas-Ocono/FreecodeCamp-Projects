@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CashRegister</title>
+    <title>CashRegisterProject</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Cash Register</h1>
-    <p>Enter cash from the customer</p>
-    <input id="cash" type="number" />
-    <button id="purchase-btn">Purchase</button>
-    <h2 id="price">Price:</h2>
+    <h1>Cash Register Project</h1>
+    <div id="inputs">
+      <input id="cash" />
+      <button id="purchase-btn">Purchase</button>
+    </div>
+    <div id="change-due">
+      <p id="price">Price:</p>
+      <p id="status"></p>
+    </div>
 
-    <div id="change-due"></div>
     <div id="drawer"></div>
-    <div id="output"></div>
+
     <script src="script.js"></script>
   </body>
 </html>

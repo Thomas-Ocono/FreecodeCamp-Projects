@@ -1,0 +1,48 @@
+body {
+  background-color: antiquewhite;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+#inputs {
+  display: flex;
+  justify-content: center;
+}
+#cash {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+#purchase-btn {
+  font-size: 1.5rem;
+}
+#purchase-btn:hover {
+  color: white;
+  background-color: blue;
+}
+#change-due {
+  font-size: 1.5rem;
+  background-color: aliceblue;
+  border: 3px solid black;
+  border-radius: 1rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  text-align: center;
+}
+#drawer {
+  font-size: 1.5rem;
+  background-color: aliceblue;
+  border: 3px solid black;
+  border-radius: 1rem;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  margin-top: 3rem;
+  text-align: center;
+}
