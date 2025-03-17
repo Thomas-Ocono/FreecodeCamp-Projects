@@ -45,6 +45,8 @@ h1 {
 }
 #basic-info img {
   height: 20rem;
+  display: block;
+  margin: auto;
 }
 #basic-info h2 {
   display: inline;
