@@ -1,0 +1,15 @@
+body {
+  background-color: bisque;
+}
+#quote-box {
+  display: block;
+  max-width: 75%;
+  min-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: burlywood;
+  margin-top: 15%;
+  border-radius: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
