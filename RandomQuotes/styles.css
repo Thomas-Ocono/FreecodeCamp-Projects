@@ -1,15 +1,28 @@
-body {
-  background-color: bisque;
+*{
+    margin=0;
 }
-#quote-box {
-  display: block;
-  max-width: 75%;
-  min-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: burlywood;
-  margin-top: 15%;
-  border-radius: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:blanchedalmond
+}
+#title{
+    font-size: 5rem;
+    text-align: center;
+    margin-top:8rem;
+}
+#container{
+    background-color:white;
+    border: 10px solid black;
+    margin-left:auto;
+    margin-right:auto;
+    width:70%;
+    border-radius:1rem;
+    height: 20rem;
+    display:flex;
+    flex-direction: column;
+    padding:40px;
+}
+a{
+    text-decoration: none;
+    color: black;
 }

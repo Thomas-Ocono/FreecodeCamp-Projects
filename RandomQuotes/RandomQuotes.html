@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Random Quotes Machine</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RandomQuotes</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="quote-box">
-      <h1 id="text">Text</h1>
-      <h2 id="author">Author</h2>
-      <a
-        class="tweet-button"
-        id="tweet-quote"
-        href="https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22Life%20is%20what%20happens%20to%20you%20while%20you%E2%80%99re%20busy%20making%20other%20plans.%22%20John%20Lennon"
-        target="_top"
-        >X</a
-      >
-      <button id="new-quote">New Quote</button>
+    <h1 id="title">Random Quotes Machine</h1>
+    <div id="container">
+      <div id="quote-box">
+        <h2 id="text">Test Text</h2>
+        <h3 id="author">Test author</h3>
+        <div id="buttons">
+          <button id="new-quote">New Quote</button>
+          <button>
+            <a
+              id="tweet-quote"
+              href="https://twitter.com/intent/tweet"
+              target="_blank"
+              >Tweet</a
+            >
+          </button>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
